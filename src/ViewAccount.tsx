@@ -44,7 +44,7 @@ type TablePaginationProps = {
 };
 
 const TablePagination: React.FC<TablePaginationProps> = ({ page, totalPages, onPrev, onNext, onPageInput, pageInput, setPageInput }) => (
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18, margin: '4px 0 16px 0' }}>
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18, margin: '32px 0 16px 0' }}>
     <button onClick={onPrev} disabled={page === 1} style={{ padding: '6px 18px', borderRadius: 4, border: 'none', background: page === 1 ? '#eee' : '#1976d2', color: page === 1 ? '#888' : '#fff', fontWeight: 600, cursor: page === 1 ? 'not-allowed' : 'pointer' }}>Previous</button>
     <span style={{ fontSize: 15, color: '#222', display: 'flex', alignItems: 'center', gap: 6 }}>
       Page
@@ -90,7 +90,7 @@ const ViewAccount: React.FC = () => {
 
   return (
     <>
-      <div className="view-account-card" style={{ width: '96%', maxWidth: '100vw', margin: '20px auto', background: '#fff', borderRadius: 12, boxShadow: '0 6px 24px 0 rgba(6,13,58,0.08)', padding: '32px 32px 48px 32px' }}>
+      <div className="view-account-card" style={{ width: '90%', maxWidth: '100vw', margin: '20px auto', background: '#fff', borderRadius: 12, boxShadow: '0 6px 24px 0 rgba(6,13,58,0.08)', padding: '32px 32px 48px 32px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28, flexWrap: 'wrap' }}>
           <span style={{ color: '#0A2B73', fontSize: 19, marginRight: 18, fontWeight: 600 }}>Total Count : {filtered.length}</span>
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -107,8 +107,7 @@ const ViewAccount: React.FC = () => {
         <div style={{ width: '100%' }}>
           <Table columns={columns} data={paginated} rowsPerPage={rowsPerPage} />
         </div>
-      </div>
-      {totalPages > 1 && (
+        {totalPages > 1 && (
         <TablePagination
           page={page}
           totalPages={totalPages}
@@ -119,6 +118,7 @@ const ViewAccount: React.FC = () => {
           setPageInput={setPageInput}
         />
       )}
+      </div>
     </>
   );
 };

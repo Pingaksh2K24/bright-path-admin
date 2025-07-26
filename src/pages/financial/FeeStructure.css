@@ -1,0 +1,209 @@
+.fee-structure-container {
+  padding: 1.5rem;
+}
+
+.fee-structure-header {
+  margin-bottom: 1.5rem;
+}
+
+.fee-structure-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.fee-structure-subtitle {
+  color: #6b7280;
+}
+
+.filters-section {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .filters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.filter-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.add-button {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button:hover {
+  background-color: #1d4ed8;
+}
+
+.table-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fee-table thead {
+  background-color: #f9fafb;
+}
+
+.fee-table th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fee-table tbody {
+  background-color: white;
+}
+
+.fee-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.fee-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.fee-table td {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.fee-table td.class-cell {
+  font-weight: 500;
+  color: #111827;
+}
+
+.fee-table td.course-cell {
+  color: #111827;
+}
+
+.fee-table td.amount-cell {
+  color: #111827;
+}
+
+.fee-table td.total-cell {
+  font-weight: 600;
+  color: #111827;
+}
+
+.fee-table td.discount-cell {
+  color: #059669;
+}
+
+.fee-table td.final-cell {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.fee-table td.installments-cell {
+  color: #111827;
+}
+
+.actions-cell {
+  font-weight: 500;
+}
+
+.actions-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button {
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.edit-button:hover {
+  color: #1e40af;
+}
+
+.delete-button {
+  color: #dc2626;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.delete-button:hover {
+  color: #b91c1c;
+} 

@@ -58,7 +58,7 @@ const Table: React.FC<TableProps> = ({ columns, data, className, rowsPerPage = 5
     <div style={{ overflowX: 'auto', boxShadow: '0 6px 24px 0 rgba(6,13,58,0.08)', borderRadius: 4, background: '#fff' }}>
       <table className={className || 'common-table'} style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #d1d5db' }}>
         <thead>
-          <tr style={{ background: '#060d3a' }}>
+          <tr style={{ background: '#0A2B73' }}>
             {columns.map((col) => (
               <th
                 key={col.accessor}
