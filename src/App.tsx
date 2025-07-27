@@ -5,7 +5,6 @@ import AccountManagement from './AccountManagement';
 import DashboardHome from './DashboardHome';
 import ViewAccount from './ViewAccount';
 import Student from './pages/student/Student';
-import Course from './pages/course/Course';
 import AddCourse from './pages/course/AddCourse';
 import CourseList from './pages/course/CourseList';
 import SubjectMapping from './pages/course/SubjectMapping';

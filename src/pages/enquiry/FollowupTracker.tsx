@@ -59,7 +59,6 @@ const TablePagination: React.FC<TablePaginationProps> = ({ page, totalPages, onP
 const FollowupTracker: React.FC = () => {
   const [data, setData] = useState(sampleData);
   const [filters, setFilters] = useState({ name: '', contact: '', status: '' });
-  const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [pageInput, setPageInput] = useState('1');
   const [modalOpen, setModalOpen] = useState(false);
@@ -80,9 +79,6 @@ const FollowupTracker: React.FC = () => {
     u.name.toLowerCase().includes(filters.name.toLowerCase()) &&
     u.contact.toLowerCase().includes(filters.contact.toLowerCase()) &&
     (filters.status === '' || u.status === filters.status)
-  ).filter(u =>
-    u.name.toLowerCase().includes(search.toLowerCase()) ||
-    u.contact.toLowerCase().includes(search.toLowerCase())
   );
   const totalPages = Math.ceil(filtered.length / rowsPerPage);
   const paginated = filtered.slice((page - 1) * rowsPerPage, page * rowsPerPage);

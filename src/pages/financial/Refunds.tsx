@@ -79,7 +79,6 @@ const Refunds: React.FC = () => {
   ];
 
   const reasons = ['Dropout', 'Class Cancellation', 'Fee Adjustment', 'Course Change', 'Medical Issue', 'Other'];
-  const paymentModes = ['Cash', 'UPI', 'Bank Transfer', 'Cheque'];
   const statuses = ['Pending', 'Processed', 'Completed', 'Rejected'];
 
   const totalRefundAmount = refundsData.reduce((sum, record) => sum + record.refundAmount, 0);

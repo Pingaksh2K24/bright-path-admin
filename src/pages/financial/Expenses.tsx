@@ -98,7 +98,6 @@ const Expenses: React.FC = () => {
   ];
 
   const categories = ['Rent', 'Salaries', 'Utilities', 'Marketing', 'Maintenance', 'Office Supplies', 'Internet', 'Cleaning', 'Other'];
-  const paymentMethods = ['Cash', 'UPI', 'Bank Transfer', 'Online', 'Cheque'];
   const months = ['January 2025', 'December 2024', 'November 2024', 'October 2024'];
 
   const totalExpenses = expensesData.reduce((sum, record) => sum + record.amount, 0);

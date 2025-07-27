@@ -39,13 +39,59 @@ const FacultyList: React.FC = () => {
     { id: 12, name: 'Dr. Kiran Malhotra', subject: 'Computer Science', contactNo: '98188xxxxx', assignedBatches: 'JEE-2025', status: 'Active', email: 'kiran@brightpath.com', experience: '8 years', joiningDate: '05-Jan-2024' },
   ];
 
-  const columns: TableColumn<FacultyData>[] = [
-    { key: 'name', header: 'Name' },
-    { key: 'subject', header: 'Subject(s)' },
-    { key: 'contactNo', header: 'Contact No.' },
-    { key: 'assignedBatches', header: 'Assigned Batches' },
-    { key: 'status', header: 'Status' },
-    { key: 'actions', header: 'Actions' }
+  const columns: TableColumn[] = [
+    { 
+      header: 'Name', 
+      accessor: 'name',
+      renderCell: (faculty) => (
+        <div className="faculty-name">
+          <div className="faculty-name-text">{faculty.name}</div>
+          <div className="faculty-email">{faculty.email}</div>
+        </div>
+      )
+    },
+    { 
+      header: 'Subject(s)', 
+      accessor: 'subject',
+      renderCell: (faculty) => (
+        <div className="faculty-subject">
+          <div className="subject-name">{faculty.subject}</div>
+          <div className="subject-experience">{faculty.experience} exp.</div>
+        </div>
+      )
+    },
+    { header: 'Contact No.', accessor: 'contactNo' },
+    { 
+      header: 'Assigned Batches', 
+      accessor: 'assignedBatches',
+      renderCell: (faculty) => (
+        <div className="assigned-batches">
+          {faculty.assignedBatches.split(', ').map((batch: string, index: number) => (
+            <span key={index} className="batch-tag">{batch}</span>
+          ))}
+        </div>
+      )
+    },
+    { 
+      header: 'Status', 
+      accessor: 'status',
+      renderCell: (faculty) => (
+        <span className={`status-badge ${getStatusClass(faculty.status)}`}>
+          {faculty.status}
+        </span>
+      )
+    },
+    { 
+      header: 'Actions', 
+      accessor: 'actions',
+      renderCell: () => (
+        <div className="actions-cell">
+          <button className="action-button view-button">View</button>
+          <button className="action-button edit-button">Edit</button>
+          <button className="action-button delete-button">Delete</button>
+        </div>
+      )
+    }
   ];
 
   const filteredData = sampleData.filter(faculty => {
@@ -92,40 +138,7 @@ const FacultyList: React.FC = () => {
     return status === 'Active' ? 'status-active' : 'status-inactive';
   };
 
-  const renderRow = (faculty: FacultyData) => ({
-    name: (
-      <div className="faculty-name">
-        <div className="faculty-name-text">{faculty.name}</div>
-        <div className="faculty-email">{faculty.email}</div>
-      </div>
-    ),
-    subject: (
-      <div className="faculty-subject">
-        <div className="subject-name">{faculty.subject}</div>
-        <div className="subject-experience">{faculty.experience} exp.</div>
-      </div>
-    ),
-    contactNo: faculty.contactNo,
-    assignedBatches: (
-      <div className="assigned-batches">
-        {faculty.assignedBatches.split(', ').map((batch, index) => (
-          <span key={index} className="batch-tag">{batch}</span>
-        ))}
-      </div>
-    ),
-    status: (
-      <span className={`status-badge ${getStatusClass(faculty.status)}`}>
-        {faculty.status}
-      </span>
-    ),
-    actions: (
-      <div className="actions-cell">
-        <button className="action-button view-button">View</button>
-        <button className="action-button edit-button">Edit</button>
-        <button className="action-button delete-button">Delete</button>
-      </div>
-    )
-  });
+
 
   interface TablePaginationProps {
     page: number;
@@ -220,7 +233,6 @@ const FacultyList: React.FC = () => {
           <Table
             data={currentData}
             columns={columns}
-            renderRow={renderRow}
           />
         </div>
       </div>

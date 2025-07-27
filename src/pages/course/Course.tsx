@@ -9,7 +9,7 @@ const columns: TableColumn[] = [
   { header: 'Status', accessor: 'status' },
   {
     header: 'Action', accessor: 'action',
-    renderCell: (row) => (
+    renderCell: () => (
       <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
         <button style={{ background: '#1976d2', color: '#fff', border: 'none', borderRadius: 4, padding: '4px 14px', fontWeight: 600, cursor: 'pointer', fontSize: 15 }}>Edit</button>
         <button style={{ background: '#C62828', color: '#fff', border: 'none', borderRadius: 4, padding: '4px 14px', fontWeight: 600, cursor: 'pointer', fontSize: 15 }}>Delete</button>
@@ -63,7 +63,6 @@ const TablePagination: React.FC<TablePaginationProps> = ({ page, totalPages, onP
 );
 
 const Course: React.FC = () => {
-  const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [pageInput, setPageInput] = useState('1');
   const [filters, setFilters] = useState({ name: '', instructor: '', status: '' });
@@ -77,10 +76,6 @@ const Course: React.FC = () => {
     u.name.toLowerCase().includes(filters.name.toLowerCase()) &&
     u.instructor.toLowerCase().includes(filters.instructor.toLowerCase()) &&
     (filters.status === '' || u.status === filters.status)
-  ).filter(u =>
-    u.name.toLowerCase().includes(search.toLowerCase()) ||
-    u.instructor.toLowerCase().includes(search.toLowerCase()) ||
-    u.id.toLowerCase().includes(search.toLowerCase())
   );
   const totalPages = Math.ceil(filtered.length / rowsPerPage);
   const paginated = filtered.slice((page - 1) * rowsPerPage, page * rowsPerPage);
