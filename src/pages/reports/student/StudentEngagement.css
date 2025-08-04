@@ -1,0 +1,648 @@
+.student-engagement {
+  padding: 24px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.page-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Filters Section */
+.filters-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.875rem;
+}
+
+.filter-group select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #7f8c8d;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: #95a5a6;
+  margin: 0;
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.chart-section,
+.table-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section.full-width,
+.table-section.full-width {
+  grid-column: 1 / -1;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.export-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.export-btn:hover {
+  background: #2980b9;
+}
+
+/* Activity Participation Chart */
+.participation-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.activity-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.activity-info {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activity-name {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.875rem;
+}
+
+.activity-stats {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+}
+
+.progress-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 12px;
+  background: #ecf0f1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 80px;
+  text-align: right;
+}
+
+.rate {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.875rem;
+}
+
+.score {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+}
+
+/* Homework Table */
+.homework-table {
+  overflow-x: auto;
+}
+
+.homework-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.homework-table th,
+.homework-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.homework-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.homework-table td {
+  color: #34495e;
+  font-size: 0.875rem;
+}
+
+.subject-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.submission-count {
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+.rate-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rate-bar {
+  width: 60px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.rate-text {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #2c3e50;
+}
+
+.grade-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ontime-count {
+  font-weight: 500;
+  color: #2ecc71;
+}
+
+/* Interaction Logs */
+.interaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.interaction-item {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.interaction-item:hover {
+  border-color: #3498db;
+}
+
+.interaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.interaction-type {
+  font-weight: 500;
+  color: #2c3e50;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: white;
+  text-transform: capitalize;
+}
+
+.interaction-activity {
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.interaction-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: #7f8c8d;
+}
+
+/* Teacher Feedback */
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-item {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.2s ease;
+}
+
+.feedback-item:hover {
+  border-color: #3498db;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.teacher-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.teacher-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.feedback-header .subject-name {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.feedback-date {
+  font-size: 0.75rem;
+  color: #95a5a6;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.ratings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rating-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rating-label {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rating-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  color: #f39c12;
+  font-size: 1rem;
+}
+
+.rating-number {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.875rem;
+}
+
+.feedback-comments {
+  font-size: 0.875rem;
+  color: #34495e;
+  line-height: 1.5;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+/* Communication Chart */
+.communication-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.communication-item {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.2s ease;
+}
+
+.communication-item:hover {
+  border-color: #3498db;
+}
+
+.comm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.comm-channel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.channel-icon {
+  font-size: 1.2rem;
+}
+
+.channel-name {
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: capitalize;
+}
+
+.comm-stats {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.comm-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.metric-label {
+  min-width: 100px;
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.metric-bar {
+  flex: 1;
+  height: 12px;
+  background: #ecf0f1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.metric-value {
+  min-width: 50px;
+  text-align: right;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-engagement {
+    padding: 16px;
+  }
+  
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-section,
+  .table-section {
+    padding: 20px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .activity-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .progress-container {
+    width: 100%;
+  }
+  
+  .activity-info {
+    min-width: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .feedback-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .ratings-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .comm-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .metric {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .metric-bar {
+    width: 100%;
+  }
+  
+  .homework-table {
+    font-size: 0.8rem;
+  }
+  
+  .homework-table th,
+  .homework-table td {
+    padding: 8px 12px;
+  }
+}

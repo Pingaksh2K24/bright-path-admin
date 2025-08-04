@@ -1,0 +1,646 @@
+.outstanding-dues {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.page-header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Filters Section */
+.filters-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 10px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* KPI Section */
+.kpi-section {
+  margin-bottom: 40px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.kpi-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+}
+
+.kpi-card.total-outstanding {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+}
+
+.kpi-card.students-count {
+  background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+  color: white;
+}
+
+.kpi-card.high-risk {
+  background: linear-gradient(135deg, #fd7e14 0%, #e8590c 100%);
+  color: white;
+}
+
+.kpi-card.avg-due {
+  background: linear-gradient(135deg, #6f42c1 0%, #59359a 100%);
+  color: white;
+}
+
+.kpi-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.kpi-content {
+  flex: 1;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.kpi-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Section Headers */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Aging Buckets */
+.aging-buckets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.bucket-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.bucket-card:hover {
+  transform: translateY(-3px);
+}
+
+.bucket-card.current {
+  border-left: 5px solid #28a745;
+}
+
+.bucket-card.overdue-mild {
+  border-left: 5px solid #ffc107;
+}
+
+.bucket-card.overdue-moderate {
+  border-left: 5px solid #fd7e14;
+}
+
+.bucket-card.overdue-severe {
+  border-left: 5px solid #dc3545;
+}
+
+.bucket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bucket-title {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.bucket-count {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.bucket-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bucket-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.bucket-fill.current {
+  background-color: #28a745;
+}
+
+.bucket-fill.overdue-mild {
+  background-color: #ffc107;
+}
+
+.bucket-fill.overdue-moderate {
+  background-color: #fd7e14;
+}
+
+.bucket-fill.overdue-severe {
+  background-color: #dc3545;
+}
+
+/* Students Table */
+.students-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.header-cell {
+  padding: 15px 12px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-cell:first-child {
+  text-align: left;
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+  align-items: center;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row.high-risk {
+  background-color: #fff5f5;
+  border-left: 4px solid #dc3545;
+}
+
+.table-cell {
+  padding: 15px 12px;
+  font-size: 0.9rem;
+}
+
+.student-details {
+  text-align: left;
+}
+
+.student-name {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.risk-flag {
+  font-size: 1rem;
+}
+
+.student-meta {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.due-date {
+  color: #dc3545;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.amount-due {
+  text-align: center;
+}
+
+.amount {
+  font-weight: 700;
+  color: #dc3545;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.aging-badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.aging-badge.current {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.aging-badge.overdue-mild {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.aging-badge.overdue-moderate {
+  background-color: #ffeaa7;
+  color: #b8860b;
+}
+
+.aging-badge.overdue-severe {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.days-overdue {
+  text-align: center;
+}
+
+.overdue-count {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.overdue-count.current {
+  color: #28a745;
+}
+
+.overdue-count.overdue-mild {
+  color: #ffc107;
+}
+
+.overdue-count.overdue-moderate {
+  color: #fd7e14;
+}
+
+.overdue-count.overdue-severe {
+  color: #dc3545;
+}
+
+.follow-up-status {
+  text-align: center;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.status-icon {
+  font-size: 1rem;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.last-followup {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.actions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.action-btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn.send-reminder {
+  background-color: #28a745;
+  color: white;
+}
+
+.action-btn.send-email {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-btn.call {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Class Summary Grid */
+.class-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.class-summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.class-summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.class-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.class-summary-header h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.batch-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.stat-value.outstanding {
+  color: #dc3545;
+}
+
+.stat-value.amount {
+  color: #fd7e14;
+}
+
+.outstanding-percentage {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff3cd;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.percentage {
+  color: #856404;
+  font-size: 1.1rem;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.no-data p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Export Section */
+.export-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.export-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.export-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .outstanding-dues {
+    padding: 15px;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .aging-buckets {
+    grid-template-columns: 1fr;
+  }
+
+  .class-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .table-cell {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .header-cell {
+    display: none;
+  }
+
+  .table-cell::before {
+    content: attr(data-label) ': ';
+    font-weight: 600;
+    color: #6c757d;
+    margin-right: 10px;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-value {
+    font-size: 1.5rem;
+  }
+
+  .bucket-count {
+    font-size: 1.2rem;
+  }
+
+  .class-summary-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

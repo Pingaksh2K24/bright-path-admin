@@ -1,0 +1,645 @@
+.revenue-by-course-batch {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.page-header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+}
+
+.access-note {
+  background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Filters Section */
+.filters-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 10px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* KPI Section */
+.kpi-section {
+  margin-bottom: 40px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.kpi-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+}
+
+.kpi-card.total-collected {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.kpi-card.total-outstanding {
+  background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+  color: white;
+}
+
+.kpi-card.total-refunds {
+  background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+  color: white;
+}
+
+.kpi-card.net-revenue {
+  background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+  color: white;
+}
+
+.kpi-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.kpi-content {
+  flex: 1;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.kpi-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Section Headers */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Revenue Trend Chart */
+.revenue-trend-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 2px solid #e9ecef;
+  border-left: 2px solid #e9ecef;
+}
+
+.trend-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.bar-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.bar-segment {
+  width: 30px;
+  min-height: 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.bar-segment:hover {
+  opacity: 0.8;
+  transform: scaleX(1.1);
+}
+
+.bar-segment.collected {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.bar-segment.outstanding {
+  background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+}
+
+.trend-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.trend-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.trend-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.legend-color {
+  width: 20px;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.legend-color.collected {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.legend-color.outstanding {
+  background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+}
+
+/* Revenue Table */
+.revenue-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1.5fr 1.5fr;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.header-cell {
+  padding: 15px 12px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-cell:first-child {
+  text-align: left;
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1.5fr 1.5fr;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+  align-items: center;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-cell {
+  padding: 15px 12px;
+  font-size: 0.9rem;
+}
+
+/* Course/Batch Details */
+.course-details,
+.batch-details {
+  text-align: left;
+}
+
+.course-name,
+.batch-name {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.course-meta,
+.batch-meta {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.faculty-info {
+  color: #495057;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Students Info */
+.students-info {
+  text-align: center;
+}
+
+.student-count {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.student-label {
+  color: #6c757d;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Revenue Metrics */
+.revenue-metrics {
+  text-align: left;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+}
+
+.metric-row.net {
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  font-weight: 600;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.metric-value.collected {
+  color: #28a745;
+}
+
+.metric-value.outstanding {
+  color: #ffc107;
+}
+
+.metric-value.refunds {
+  color: #dc3545;
+}
+
+.metric-value.net-revenue {
+  color: #007bff;
+  font-size: 0.9rem;
+}
+
+/* Collection Rate */
+.collection-rate {
+  text-align: center;
+}
+
+.rate-percentage {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.target-comparison {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Profitability */
+.profitability {
+  text-align: center;
+}
+
+.profit-margin {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.profit-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.profit-status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.profit-status.high-profit {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.profit-status.medium-profit {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.profit-status.low-profit {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.profitability-badge {
+  padding: 6px 15px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.profitability-badge.high-profit {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.profitability-badge.medium-profit {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.profitability-badge.low-profit {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.revenue-vs-target {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.no-data p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Export Section */
+.export-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.export-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.export-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .revenue-by-course-batch {
+    padding: 15px;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .chart-container {
+    height: 200px;
+    padding: 10px;
+  }
+
+  .bar-stack {
+    height: 120px;
+  }
+
+  .bar-segment {
+    width: 25px;
+  }
+
+  .trend-legend {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .table-cell {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .header-cell {
+    display: none;
+  }
+
+  .table-cell::before {
+    content: attr(data-label) ': ';
+    font-weight: 600;
+    color: #6c757d;
+    margin-right: 10px;
+  }
+
+  .metric-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-value {
+    font-size: 1.5rem;
+  }
+
+  .student-count {
+    font-size: 1.2rem;
+  }
+
+  .rate-percentage,
+  .profit-margin {
+    font-size: 1.1rem;
+  }
+
+  .chart-container {
+    height: 150px;
+  }
+
+  .bar-stack {
+    height: 80px;
+  }
+
+  .bar-segment {
+    width: 20px;
+  }
+
+  .access-note {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
